@@ -1,0 +1,42 @@
+<svg
+            width="678"
+            height="676"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="1"
+              opacity="1"
+              d="M 52 163 L 228 163 L 228 240.5 L 205.5 262 L 52 262 L 52 163 Z "
+            />
+            <path
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="1"
+              opacity="1"
+              d="M 281 163 L 400 163 L 400 516 L 281 516 L 281 163 Z "
+            />
+            <path
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="1"
+              opacity="1"
+              d="M 453 163 L 628 163 L 628 366 L 482.5 366 L 453 346 L 453 163 Z "
+            />
+            <path
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="1"
+              opacity="1"
+              d="M 52 314 L 202.5 314 L 229 339.5 L 229 516 L 52 516 L 52 314 Z "
+            />
+            <path
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="1"
+              opacity="1"
+              d="M 479.5 417 L 628 417 L 628 516 L 452 516 L 452 439.5 L 479.5 417 Z "
+            />
+          </svg>

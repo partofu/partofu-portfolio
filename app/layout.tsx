@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${klaxonCrunchy.variable} ${klaxonSmooth.variable} antialiased`}
+        className={`${klaxonCrunchy.variable} ${klaxonSmooth.variable} antialiased p-4`}
       >
         {children}
       </body>
