@@ -3,12 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const klaxonCrunchy = localFont({
-  src: "../public/fonts/Klaxon/Klaxon-Crunchy.otf",
+  src: "./fonts/Klaxon-Crunchy.otf",
   variable: "--font-klaxon-crunchy",
 });
 
 const klaxonSmooth = localFont({
-  src: "../public/fonts/Klaxon/Klaxon-Smooth.otf",
+  src: "./fonts/Klaxon-Smooth.otf",
   variable: "--font-klaxon-smooth",
 });
 
