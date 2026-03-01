@@ -40,7 +40,7 @@ const PastelBackground = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#F2F1EF]">
+    <div className="absolute inset-0 z-[-1] overflow-hidden bg-[#F2F1EF]">
       {/* Noise Overlay */}
       <div className="absolute inset-0 z-[2] pointer-events-none opacity-[0.6] mix-blend-overlay">
         <svg className="w-full h-full">
@@ -94,7 +94,7 @@ const PastelBackground = () => {
         {/* Bottom-Center: Soft Orange */}
         <motion.div 
           className="absolute bottom-[-15%] right-[15%] w-[55vw] h-[55vw] rounded-full opacity-50 mix-blend-multiply"
-          style={{ backgroundColor: "#cb7049ff" }}
+          style={{ backgroundColor: "#E38360" }}
           animate={
              isClient ? {
               x: ["0vw", "-40vw", "30vw", "-80vw", "0vw"],

@@ -49,7 +49,7 @@ export default function Main() {
         <div className="pl-36 pr-8 text-xs border-l border-neutral-700">
           <div className="flex flex-col items-end justify-center h-full py-2">
             <h1 className="text-2xl">PARTOFU</h1>
-            <p className="tracking-[0.15vw] text-neutral-700">
+            <p className="tracking-[0.15vw]">
               BRANDING & TECHNOLOGY STUDIO
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function Main() {
       {/* ================= BOTTOM CTA SECTION ================= */}
       <section className="grid grid-cols-1 md:grid-cols-3 border-neutral-700 h-[12.5rem]">
         {/* Left Text */}
-        <div className="md:col-span-2 px-28 border-r border-neutral-700 text-xl text-neutral-600 leading-relaxed flex items-center justify-center">
+        <div className="md:col-span-2 px-28 border-r border-neutral-700 text-xl leading-relaxed flex items-center justify-center">
           Your brand is your strongest competitive advantage. We'll help you
           realize it, embed it deeply into your business, and transform it into
           genuine momentum.
