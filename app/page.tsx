@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <LoaderWrapper>
       <MainHero />
-      <Services />
     </LoaderWrapper>
   );
 }
