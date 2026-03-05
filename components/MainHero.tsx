@@ -5,54 +5,7 @@ import CubeButton from "./CubeButton";
 
 export default function Main() {
   return (
-    <div className="w-full min-h-screen bg-transparent text-[#202020] border border-[#202020] flex flex-col relative overflow-hidden">
-
-      {/* ================= NAVBAR ================= */}
-      <header className="w-full z-50 fixed top-0 left-0 right-0 flex items-center justify-between border-b border-[#202020] bg-[#b8b8b8]">
-        <div className="flex self-stretch">
-          <Link
-            href="/"
-            className="px-6 border-r border-[#202020] flex items-center"
-          >
-            <Image
-              src="/logo.svg"
-              alt="Logo"
-              width={20}
-              height={20}
-              className="w-13 h-13"
-              priority
-            />
-          </Link>
-
-          <CubeLink
-            href="/work"
-            className="border-r border-[#202020]"
-          >
-            work
-          </CubeLink>
-
-          <CubeLink
-            href="/about"
-            className="border-r border-[#202020]"
-          >
-            about
-          </CubeLink>
-
-          <CubeLink
-            href="/contact"
-            className="border-r border-[#202020]"
-          >
-            contact
-          </CubeLink>
-        </div>
-
-        <div className="pl-36 pr-8 text-xs border-l border-[#202020]">
-          <div className="flex flex-col items-end justify-center h-full py-2">
-            <h1 className="text-2xl">PARTOFU</h1>
-            <p className="tracking-[0.15vw]">BRANDING & TECHNOLOGY STUDIO</p>
-          </div>
-        </div>
-      </header>
+    <div data-header-color="bg-[#b8b8b8]" className="w-full min-h-screen bg-transparent text-[#202020] border border-[#202020] flex flex-col relative overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
       <section className="flex-1 flex items-center justify-center border-b border-[#202020] pt-[70px] bg-[#b8b8b8]">

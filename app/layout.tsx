@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import SmoothScrolling from "@/components/SmoothScrolling";
+import SiteHeader from "@/components/SiteHeader";
 
 const klaxonCrunchy = localFont({
   src: "./fonts/Klaxon-Crunchy.otf",
@@ -27,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${klaxonCrunchy.variable} ${klaxonSmooth.variable} antialiased`}
       >
-        {children}
+        <SmoothScrolling>
+          <SiteHeader />
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

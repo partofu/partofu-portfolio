@@ -3,7 +3,7 @@ import MouseCircles from "./MouseCircles";
 const Services = () => {
   return (
     <>
-      <section className="flex h-[92vh] w-full bg-primary border-b-2 border-[#202020]">
+      <section data-header-color="bg-primary" className="flex h-[92vh] w-full bg-primary border-b-2 border-[#202020]">
         <div className="h-full w-1/2 border-r-2 border-[#202020]">
           <div className="space-y-6 h-1/2 border-b-2 border-[#202020] p-6">
             <h2 className="flex items-center gap-2 text-[#b8b8b8]">
@@ -32,7 +32,7 @@ const Services = () => {
           <MouseCircles />
         </div>
       </section>
-      <section className="flex h-[92vh] w-full bg-primary border-b-2 border-[#202020]">
+      <section data-header-color="bg-primary" className="flex h-[92vh] w-full bg-primary border-b-2 border-[#202020]">
         <div className="w-1/2 border-r-2 border-[#202020] relative overflow-hidden">
           <MouseCircles variant="same-radius" />
         </div>
