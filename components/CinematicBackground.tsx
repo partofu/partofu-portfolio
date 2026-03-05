@@ -184,7 +184,7 @@ const CinematicBackground = () => {
         vec3 colorOrange = vec3(1.0, 0.3, 0.0); // #FF4D00 - Primary Brand
         vec3 colorHighlight = vec3(1.0, 0.48, 0.24); // #FF7A3C - Highlight
 
-        // Gradient Logic: Black -> Shadow -> Orange -> Highlight
+        // Gradient Logic: #202020 -> Shadow -> Orange -> Highlight
         vec3 finalColor = mix(colorBlack, colorShadow, smoothstep(0.0, 0.2, intensity));
         finalColor = mix(finalColor, colorOrange, smoothstep(0.2, 0.6, intensity));
         finalColor = mix(finalColor, colorHighlight, smoothstep(0.6, 1.0, intensity));

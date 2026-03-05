@@ -12,6 +12,18 @@ export default function LoaderWrapper({ children }: LoaderWrapperProps) {
   const [showBlackScreen, setShowBlackScreen] = useState(false);
   const [revealContent, setRevealContent] = useState(false);
 
+  // Lock scroll during loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
   const handleComplete = useCallback(() => {
     // Step 1: Show black screen (matches the zoomed-in shape 2 black fill)
     setShowBlackScreen(true);
@@ -35,7 +47,7 @@ export default function LoaderWrapper({ children }: LoaderWrapperProps) {
       {/* Black screen bridge — appears when zoom fills viewport, then fades out */}
       {showBlackScreen && (
         <div
-          className="fixed inset-0 z-[99] bg-black"
+          className="fixed inset-0 z-[99] bg-[#202020]"
           style={{
             opacity: revealContent ? 0 : 1,
             transition: "opacity 0.8s ease-out",

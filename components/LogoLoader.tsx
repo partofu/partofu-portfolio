@@ -129,7 +129,7 @@ export default function LogoLoader({ onComplete }: LogoLoaderProps) {
         phase === "done" ? "pointer-events-none" : ""
       }`}
       style={{
-        backgroundColor: phase === "done" ? "transparent" : "#F2F1EF",
+        backgroundColor: phase === "done" ? "transparent" : "#b8b8b8",
         transition: phase === "done" ? "background-color 0.3s ease" : "none",
       }}
     >
@@ -180,45 +180,35 @@ export default function LogoLoader({ onComplete }: LogoLoaderProps) {
               key={i}
               ref={(el) => { pathRefs.current[i] = el; }}
               d={path.d}
-              stroke="rgb(0, 0, 0)"
+              stroke="#202020"
               strokeWidth="2"
               strokeLinejoin="round"
-              fill="rgb(0, 0, 0)"
+              fill="#202020"
               pathLength={path.drawMode === "middle" ? 1 : undefined}
               style={getPathStyle(i)}
             />
           ))}
         </svg>
-
-        {/* Subtle glow behind the logo while drawing */}
-        <div
-          className="absolute inset-0 -z-10 rounded-full blur-[80px] transition-opacity duration-1000"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(227,131,96,0.15) 0%, transparent 70%)",
-            opacity: phase === "draw" || phase === "fill" ? 1 : 0,
-          }}
-        />
       </div>
 
       {/* Progress indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-3">
         <div
-          className="h-[1px] bg-neutral-400 overflow-hidden transition-opacity duration-500"
+          className="h-[1px] bg-[#202020]/20 overflow-hidden transition-opacity duration-500"
           style={{
             width: "120px",
             opacity: isZooming ? 0 : 1,
           }}
         >
           <div
-            className="h-full bg-black"
+            className="h-full bg-[#202020]"
             style={{
               animation: `logo-progress ${ZOOM_START}s linear forwards`,
             }}
           />
         </div>
         <p
-          className="text-[10px] tracking-[0.3em] uppercase transition-opacity duration-500"
+          className="text-[#202020] text-[10px] tracking-[0.3em] uppercase transition-opacity duration-500"
           style={{
             fontFamily: "var(--font-klaxon-smooth)",
             opacity: isZooming ? 0 : 1,

@@ -4,7 +4,7 @@ import { LightLines } from './ui/light-lines';
 
 const Hero = () => {
   return (
-    <div className="text-black font-display h-screen overflow-hidden selection:bg-primary selection:text-white relative">
+    <div className="text-[#202020] font-display h-screen overflow-hidden selection:bg-primary selection:text-[#b8b8b8] relative">
       <Navbar />
       {/* Background - LightLines */}
       <LightLines
@@ -31,15 +31,15 @@ const Hero = () => {
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col gap-10 items-start order-2 lg:order-1 mt-12 lg:mt-0">
             <div className="max-w-sm">
-              <p className="text-xl font-medium leading-tight text-black border-l-[6px] border-black pl-6">
+              <p className="text-xl font-medium leading-tight text-[#202020] border-l-[6px] border-[#202020] pl-6">
                 Architecting digital excellence through precise engineering and intentional design. We transform vision into raw, measurable impact.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <button className="bg-black text-white border-4 border-black px-8 py-5 text-base font-black uppercase tracking-widest shadow-brutal hover:shadow-brutal-hover hover-lift transition-all duration-150 whitespace-nowrap">
+              <button className="bg-[#202020] text-[#b8b8b8] border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest shadow-brutal hover:shadow-brutal-hover hover-lift transition-all duration-150 whitespace-nowrap">
                 Start a Project
               </button>
-              <button className="bg-white/50 backdrop-blur-sm border-4 border-black px-8 py-5 text-base font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-150 hover-lift whitespace-nowrap">
+              <button className="bg-[#b8b8b8]/50 backdrop-blur-sm border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest hover:bg-[#202020] hover:text-[#b8b8b8] transition-all duration-150 hover-lift whitespace-nowrap">
                 View Work
               </button>
             </div>
@@ -50,7 +50,7 @@ const Hero = () => {
       {/* Footer */}
       <footer className="absolute bottom-0 left-0 right-0 p-10 flex flex-col md:flex-row justify-between items-end md:items-center z-10 gap-6">
         <div className="flex items-center gap-6">
-          <div className="w-16 h-[4px] bg-black"></div>
+          <div className="w-16 h-[4px] bg-[#202020]"></div>
           <div className="flex items-center gap-3">
             <span className="w-3 h-3 bg-primary rounded-full animate-pulse"></span>
             <span className="text-xs font-black uppercase tracking-[0.3em]">Now available for q4 partnerships</span>
