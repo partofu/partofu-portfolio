@@ -129,7 +129,7 @@ export default function LogoLoader({ onComplete }: LogoLoaderProps) {
         phase === "done" ? "pointer-events-none" : ""
       }`}
       style={{
-        backgroundColor: phase === "done" ? "transparent" : "#b8b8b8",
+        backgroundColor: phase === "done" ? "transparent" : "#f2f2f2",
         transition: phase === "done" ? "background-color 0.3s ease" : "none",
       }}
     >

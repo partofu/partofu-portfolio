@@ -6,34 +6,32 @@ import CubeLink from "./CubeLink";
 import { useEffect, useState } from "react";
 
 export default function SiteHeader() {
-  const [headerBgClass, setHeaderBgClass] = useState("bg-[#b8b8b8]");
+  const [headerBgClass, setHeaderBgClass] = useState("bg-[#f2f2f2]");
 
   useEffect(() => {
-    // We observe all elements with data-header-color.
-    const sections = Array.from(document.querySelectorAll("[data-header-color]"));
-    
-    // We use a root margin that triggers when a section crosses the top ~10% of the viewport relative to the header.
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const colorClass = entry.target.getAttribute("data-header-color");
-            if (colorClass) {
-              setHeaderBgClass(colorClass);
-            }
-          }
-        });
-      },
-      {
-        rootMargin: "-50px 0px -80% 0px", // triggers when element is roughly in the top 50px to 20vh
-      }
-    );
+    const handleScroll = () => {
+      const sections = Array.from(document.querySelectorAll("[data-header-color]"));
+      if (sections.length === 0) return;
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+      // Default to the first section's color if we are above everything
+      let currentBg = sections[0].getAttribute("data-header-color") || "bg-[#f2f2f2]";
 
-    return () => observer.disconnect();
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // If the section's top has reached the header (with a tiny threshold), 
+        // this section becomes the active background.
+        if (rect.top <= 85) {
+          currentBg = section.getAttribute("data-header-color") || currentBg;
+        }
+      });
+
+      setHeaderBgClass((prev) => (prev !== currentBg ? currentBg : prev));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

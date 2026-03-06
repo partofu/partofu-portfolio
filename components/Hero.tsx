@@ -4,7 +4,7 @@ import { LightLines } from './ui/light-lines';
 
 const Hero = () => {
   return (
-    <div className="text-[#202020] font-display h-screen overflow-hidden selection:bg-primary selection:text-[#b8b8b8] relative">
+    <div className="text-[#202020] font-display h-screen overflow-hidden selection:bg-primary selection:text-[#f2f2f2] relative">
       <Navbar />
       {/* Background - LightLines */}
       <LightLines
@@ -36,10 +36,10 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <button className="bg-[#202020] text-[#b8b8b8] border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest shadow-brutal hover:shadow-brutal-hover hover-lift transition-all duration-150 whitespace-nowrap">
+              <button className="bg-[#202020] text-[#f2f2f2] border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest shadow-brutal hover:shadow-brutal-hover hover-lift transition-all duration-150 whitespace-nowrap">
                 Start a Project
               </button>
-              <button className="bg-[#b8b8b8]/50 backdrop-blur-sm border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest hover:bg-[#202020] hover:text-[#b8b8b8] transition-all duration-150 hover-lift whitespace-nowrap">
+              <button className="bg-[#f2f2f2]/50 backdrop-blur-sm border-4 border-[#202020] px-8 py-5 text-base font-black uppercase tracking-widest hover:bg-[#202020] hover:text-[#f2f2f2] transition-all duration-150 hover-lift whitespace-nowrap">
                 View Work
               </button>
             </div>

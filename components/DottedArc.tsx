@@ -64,7 +64,7 @@ class ArcPoint {
 
 export default function DottedArc({ 
   className = "", 
-  dotColor = "rgba(184, 184, 184, 0.3)" // Default semi-transparent #b8b8b8
+  dotColor = "rgba(184, 184, 184, 0.3)" // Default semi-transparent #f2f2f2
 }: DottedArcProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);

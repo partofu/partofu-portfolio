@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center fixed z-50 w-full top-0 left-0 p-4">
-      <div className="bg-zinc-300 border border-[#b8b8b8]/20 backdrop-blur-md inline-block px-2 rounded-xs text-sm shadow-lg">
+      <div className="bg-zinc-300 border border-[#f2f2f2]/20 backdrop-blur-md inline-block px-2 rounded-xs text-sm shadow-lg">
         <div className="flex items-center gap-2">
           <Link href="/" className=" rounded-xs">
             <Image

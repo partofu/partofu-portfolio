@@ -6,8 +6,8 @@ const Services = () => {
       <section data-header-color="bg-primary" className="flex h-[92vh] w-full bg-primary border-b-2 border-[#202020]">
         <div className="h-full w-1/2 border-r-2 border-[#202020]">
           <div className="space-y-6 h-1/2 border-b-2 border-[#202020] p-6">
-            <h2 className="flex items-center gap-2 text-[#b8b8b8]">
-              <span className="h-2 w-2 inline-block bg-[#b8b8b8]"></span>
+            <h2 className="flex items-center gap-2 text-[#f2f2f2]">
+              <span className="h-2 w-2 inline-block bg-[#f2f2f2]"></span>
               Branding
             </h2>
             <div className="text-3xl font-bold text-[#202020]">
@@ -38,8 +38,8 @@ const Services = () => {
         </div>
         <div className="h-full w-1/2">
           <div className="space-y-6 h-1/2 border-b-2 border-[#202020] p-6">
-            <h2 className="flex items-center gap-2 text-[#b8b8b8]">
-              <span className="h-2 w-2 inline-block bg-[#b8b8b8]"></span>
+            <h2 className="flex items-center gap-2 text-[#f2f2f2]">
+              <span className="h-2 w-2 inline-block bg-[#f2f2f2]"></span>
               Web Design & Development
             </h2>
             <div className="text-3xl font-bold text-[#202020]">

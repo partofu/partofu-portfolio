@@ -7,7 +7,7 @@ import PastelBackground from "./PastelBackground";
 
 const TestHero = () => {
   return (
-    <div className="text-[#202020] h-screen overflow-hidden selection:bg-primary selection:text-[#b8b8b8] relative">
+    <div className="text-[#202020] h-screen overflow-hidden selection:bg-primary selection:text-[#f2f2f2] relative">
       <Navbar />
       
       {/* Background Blobs */}
@@ -40,7 +40,7 @@ const TestHero = () => {
             <span className="border-b border-[#2F2F2F] pb-1 group-hover:border-transparent transition-colors">
               Discover how
             </span>
-            <span className="bg-[#2F2F2F] text-[#b8b8b8] rounded-full p-2 group-hover:bg-[#FF4D00] transition-colors duration-300">
+            <span className="bg-[#2F2F2F] text-[#f2f2f2] rounded-full p-2 group-hover:bg-[#FF4D00] transition-colors duration-300">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17l9.2-9.2M17 17V7H7" />
               </svg>
