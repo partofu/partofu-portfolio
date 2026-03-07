@@ -16,7 +16,7 @@ export default function MouseCircles({
   const currentRef = useRef({ x: 0.5, y: 0.5 });
   const animRef = useRef<number>(0);
 
-  const draw = useCallback(() => {
+  const draw = useCallback(function drawInner() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -29,7 +29,7 @@ export default function MouseCircles({
     const cy = h / 2;
 
     // Smooth lerp towards mouse position
-    const lerp = 0.06;
+    const lerp = 0.12;
     currentRef.current.x +=
       (mouseRef.current.x - currentRef.current.x) * lerp;
     currentRef.current.y +=
@@ -76,8 +76,8 @@ export default function MouseCircles({
 
 
 
-    animRef.current = requestAnimationFrame(draw);
-  }, []);
+    animRef.current = requestAnimationFrame(drawInner);
+  }, [variant]);
 
   useEffect(() => {
     const canvas = canvasRef.current;

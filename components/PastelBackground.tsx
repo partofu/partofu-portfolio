@@ -1,43 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const PastelBackground = () => {
   // Use state to store random values to avoid hydration mismatch
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setTimeout(() => setIsClient(true), 0);
   }, []);
 
-  // Function to generate random positions
-  const getRandomPositions = (count: number) => {
-    if (!isClient) return [];
-    // Generate random positions between -100% and 100% of the viewport relative to start
-    // We want full screen coverage.
-    // Since blobs start at specific corners, we need to push them far.
-    // Using viewport units (vw, vh) in strings for framer motion is convenient
-    const positions = [];
-    for (let i = 0; i < count; i++) {
-      // Random x between -100vw and 50vw
-      const x = `${Math.floor(Math.random() * 150 - 100)}vw`;
-      // Random y between -100vh and 100vh
-      const y = `${Math.floor(Math.random() * 200 - 100)}vh`;
-      // Random scale between 0.8 and 1.2 to add breathing effect
-      const scale = 0.8 + Math.random() * 0.4;
-      positions.push({ x, y, scale });
-    }
-    return positions;
-  };
 
-  // Transition settings for smooth, continuous movement
-  const transition = {
-    duration: 20, // Slow movement
-    ease: "easeInOut",
-    repeat: Infinity,
-    repeatType: "mirror" as const,
-  };
 
   return (
     <div className="absolute inset-0 z-[-1] overflow-hidden bg-[#F2F1EF]">

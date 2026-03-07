@@ -1,0 +1,104 @@
+
+> partofu@0.1.0 lint
+> eslint
+
+
+D:\partofu\components\CinematicBackground.tsx
+  263:22  warning  The ref value 'containerRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'containerRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+D:\partofu\components\DottedArc.tsx
+  149:45  error  Error: Cannot access variable before it is declared
+
+`draw` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\partofu\components\DottedArc.tsx:149:45
+  147 |     });
+  148 |
+> 149 |     animRef.current = requestAnimationFrame(draw);
+      |                                             ^^^^ `draw` accessed before it is declared
+  150 |   }, [dotColor]);
+  151 |
+  152 |   useEffect(() => {
+
+D:\partofu\components\DottedArc.tsx:114:3
+  112 |   }, []);
+  113 |
+> 114 |   const draw = useCallback(() => {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |     const canvas = canvasRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |     if (!canvas) return;
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 149 |     animRef.current = requestAnimationFrame(draw);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |   }, [dotColor]);
+      | ^^^^^^^^^^^^^^^^^^ `draw` is declared here
+  151 |
+  152 |   useEffect(() => {
+  153 |     const canvas = canvasRef.current;  react-hooks/immutability
+
+D:\partofu\components\MainHero.tsx
+  1:8  warning  'Link' is defined but never used      @typescript-eslint/no-unused-vars
+  2:8  warning  'Image' is defined but never used     @typescript-eslint/no-unused-vars
+  3:8  warning  'CubeLink' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\partofu\components\MouseCircles.tsx
+  79:45  error    Error: Cannot access variable before it is declared
+
+`draw` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\partofu\components\MouseCircles.tsx:79:45
+  77 |
+  78 |
+> 79 |     animRef.current = requestAnimationFrame(draw);
+     |                                             ^^^^ `draw` accessed before it is declared
+  80 |   }, []);
+  81 |
+  82 |   useEffect(() => {
+
+D:\partofu\components\MouseCircles.tsx:19:3
+  17 |   const animRef = useRef<number>(0);
+  18 |
+> 19 |   const draw = useCallback(() => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |     const canvas = canvasRef.current;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 21 |     if (!canvas) return;
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 79 |     animRef.current = requestAnimationFrame(draw);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 80 |   }, []);
+     | ^^^^^^^^^^ `draw` is declared here
+  81 |
+  82 |   useEffect(() => {
+  83 |     const canvas = canvasRef.current;  react-hooks/immutability
+  80:6   warning  React Hook useCallback has a missing dependency: 'variant'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+D:\partofu\components\PastelBackground.tsx
+   4:18  warning  'useAnimation' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  11:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\partofu\components\PastelBackground.tsx:11:5
+   9 |
+  10 |   useEffect(() => {
+> 11 |     setIsClient(true);
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |   }, []);
+  13 |
+  14 |   // Function to generate random positions  react-hooks/set-state-in-effect
+  15:9   warning  'getRandomPositions' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+  35:9   warning  'transition' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+
+D:\partofu\components\SmoothScrolling.tsx
+  7:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 12 problems (4 errors, 8 warnings)
+

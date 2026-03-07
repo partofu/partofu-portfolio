@@ -255,12 +255,14 @@ const CinematicBackground = () => {
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
 
+    const currentContainer = containerRef.current;
+
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
-      if (containerRef.current) {
-        containerRef.current.removeChild(renderer.domElement); // Standard cleanup
+      if (currentContainer) {
+        currentContainer.removeChild(renderer.domElement); // Standard cleanup
       }
       geometry.dispose();
       material.dispose();

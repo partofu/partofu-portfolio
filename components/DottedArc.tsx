@@ -79,26 +79,26 @@ export default function DottedArc({
   const generateArcs = useCallback((w: number, h: number) => {
     const arcsData: ArcPoint[][] = [];
     
-    // We create 3 overlapping arcs with slightly different stiffness 
-    // to give that nice layered "string" effect seen on appart.agency
+    // We create 3 overlapping concentric circles with slightly different stiffness 
+    // to give that nice layered "string" effect
     const arcConfigs = [
-      { radiusFactor: 0.35, points: 60, spring: 0.05, friction: 0.82 },
-      { radiusFactor: 0.38, points: 65, spring: 0.03, friction: 0.85 },
-      { radiusFactor: 0.41, points: 70, spring: 0.02, friction: 0.88 },
+      { radiusFactor: 0.38, points: 90, spring: 0.05, friction: 0.82 },
+      { radiusFactor: 0.41, points: 100, spring: 0.03, friction: 0.85 },
+      { radiusFactor: 0.44, points: 110, spring: 0.02, friction: 0.88 },
     ];
 
     const cx = w / 2;
-    const cy = h; // Center of the arc circle is at the bottom of the canvas
+    const cy = h / 2; // Center of the circle is exactly in the middle of the canvas
 
     arcConfigs.forEach((config) => {
-      const radius = Math.min(w, h) * config.radiusFactor;
+      // Use the smaller dimension (height or width) to ensure the circles fit on the screen
+      const minDimension = Math.min(w, h);
+      const radius = minDimension * config.radiusFactor;
       const arcPoints = [];
 
       for (let i = 0; i < config.points; i++) {
-        // Map points from PI (left side) to 0 (right side)
-        // Since Y goes down, 0 is right, PI is left, and bottom is PI/2.
-        // We want a semi circle sticking UP, so from PI to 2*PI.
-        const t = Math.PI + (i / (config.points - 1)) * Math.PI;
+        // Map points to a full circle (0 to 2*PI)
+        const t = (i / config.points) * Math.PI * 2;
         
         const px = cx + Math.cos(t) * radius;
         const py = cy + Math.sin(t) * radius;
@@ -111,7 +111,7 @@ export default function DottedArc({
     stateRef.current.arcs = arcsData;
   }, []);
 
-  const draw = useCallback(() => {
+  const draw = useCallback(function drawInner() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -131,8 +131,8 @@ export default function DottedArc({
     ctx.fillStyle = dotColor;
 
     arcs.forEach((arcPoints, arcIndex) => {
-      // Different dot sizes for different layers adds depth
-      const dotRadius = arcIndex === 0 ? 1.5 : (arcIndex === 1 ? 1 : 0.8);
+      // Different dot sizes for different layers adds depth - made larger for higher visibility
+      const dotRadius = arcIndex === 0 ? 3 : (arcIndex === 1 ? 2.2 : 1.5);
 
       arcPoints.forEach((p, i) => {
         // Pin the very first and very last points to their base positions
@@ -146,7 +146,7 @@ export default function DottedArc({
       });
     });
 
-    animRef.current = requestAnimationFrame(draw);
+    animRef.current = requestAnimationFrame(drawInner);
   }, [dotColor]);
 
   useEffect(() => {
@@ -158,8 +158,9 @@ export default function DottedArc({
       if (!parent) return;
       
       const dpr = window.devicePixelRatio || 1;
-      const w = parent.clientWidth;
-      const h = parent.clientHeight;
+      // Get dimensions from parent, fallback to window if parent is zeroed out by absolute positioning
+      const w = parent.clientWidth || window.innerWidth;
+      const h = parent.clientHeight || window.innerHeight;
       
       canvas.width = w * dpr;
       canvas.height = h * dpr;

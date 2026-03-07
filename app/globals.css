@@ -163,10 +163,11 @@ p {
   inset: 0;
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(calc(var(--cube-half, 2rem) * -1));
 }
 
 .nav-cube:hover .nav-cube-inner {
-  transform: rotateX(-90deg);
+  transform: translateZ(calc(var(--cube-half, 2rem) * -1)) rotateX(-90deg);
 }
 
 .nav-cube-face {
@@ -189,6 +190,12 @@ p {
   background-color: var(--color-primary);
   color: #fff;
   transform: rotateX(90deg) translateZ(var(--cube-half, 2rem));
+  transition: background-color 0.7s, color 0.7s;
+}
+
+header[data-theme="primary"] .nav-cube-bottom {
+  background-color: #f2f2f2;
+  color: #202020;
 }
 
 /* ===== Reversed cube (bottom-to-top) ===== */
@@ -201,7 +208,7 @@ p {
 }
 
 .nav-cube-reverse:hover .nav-cube-inner {
-  transform: rotateX(90deg);
+  transform: translateZ(calc(var(--cube-half, 2rem) * -1)) rotateX(90deg);
 }
 
 .nav-cube-reverse .nav-cube-face {
@@ -212,6 +219,12 @@ p {
   background-color: var(--color-primary);
   color: #fff;
   transform: rotateX(-90deg) translateZ(var(--cube-half, 2rem));
+  transition: background-color 0.7s, color 0.7s;
+}
+
+header[data-theme="primary"] .nav-cube-top {
+  background-color: #f2f2f2;
+  color: #202020;
 }
 
 .hover-lift:hover {
